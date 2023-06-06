@@ -1,0 +1,13 @@
+@import url("@styles/colors.css");
+@import url("@styles/globals.css");
+
+@import url("@styles/components/page.css");
+@import url("@styles/components/header.css");
+@import url("@styles/components/sr-only.css");
+@import url("@styles/components/text.css");
+@import url("@styles/components/container.css");
+@import url("@styles/components/rating.css");
+@import url("@styles/components/review.css");
+@import url("@styles/components/review-list.css");
+@import url("@styles/components/testimonial-list.css");
+@import url("@styles/components/testimonial.css");

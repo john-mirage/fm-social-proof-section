@@ -1,0 +1,55 @@
+.page {
+  min-height: 100vh;
+  padding-top: 82px;
+  padding-bottom: 99px;
+  background-image: url("bg-pattern-top-mobile.svg"),
+    url("bg-pattern-bottom-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: top left, bottom center;
+  background-size: auto, 100% 503px;
+}
+
+.page__header {
+  margin-bottom: 39px;
+}
+
+.page__review-list {
+  margin-bottom: 49px;
+}
+
+@media screen and (min-width: 1206px) {
+  .page {
+    padding-top: 118px;
+    background-image: url("bg-pattern-top-desktop.svg"),
+      url("bg-pattern-bottom-desktop.svg");
+    background-position: top left, bottom right;
+    background-size: auto;
+  }
+
+  .page__container {
+    position: relative;
+  }
+
+  .page__main {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding-top: 27px;
+  }
+
+  .page__header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 445px;
+    padding-left: 48px;
+  }
+
+  .page__review-list {
+    margin-bottom: 89px;
+    grid-column-start: 2;
+  }
+
+  .page__testimonial-list {
+    grid-column: span 2 / span 2;
+  }
+}

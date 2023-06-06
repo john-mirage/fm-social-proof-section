@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Primary Meta Tags -->
+    <title>Social proof section</title>
+    <meta name="title" content="Social proof section" />
+    <meta
+      name="description"
+      content="Frontend mentor challenge solution for: Social proof section"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://john-mirage-fm-social-proof-section.vercel.app"
+    />
+    <meta property="og:title" content="Social proof section" />
+    <meta
+      property="og:description"
+      content="Frontend mentor challenge solution for: Social proof section"
+    />
+    <meta
+      property="og:image"
+      content="https://john-mirage-fm-social-proof-section.vercel.app/preview.jpg"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https://john-mirage-fm-social-proof-section.vercel.app"
+    />
+    <meta property="twitter:title" content="Social proof section" />
+    <meta
+      property="twitter:description"
+      content="Frontend mentor challenge solution for: Social proof section"
+    />
+    <meta
+      property="twitter:image"
+      content="https://john-mirage-fm-social-proof-section.vercel.app/preview.jpg"
+    />
+  </head>
+  <body class="page">
+    <svg class="sr-only" xmlns="http://www.w3.org/2000/svg">
+      <symbol id="icon-filled-stars" viewBox="0 0 117 16">
+        <pattern
+          id="pattern-filled-stars"
+          x="0"
+          y="0"
+          width="25"
+          height="16"
+          patternUnits="userSpaceOnUse"
+        >
+          <path
+            d="M16.539 6.097a.297.297 0 00-.24-.202l-5.36-.779L8.542.26a.296.296 0 00-.53 0L5.613 5.117l-5.36.779a.297.297 0 00-.165.505l3.88 3.78-.917 5.34a.297.297 0 00.43.312l4.795-2.52 4.794 2.52a.296.296 0 00.43-.313l-.916-5.338L16.464 6.4c.08-.08.11-.197.075-.304z"
+            fill="var(--color-yellow)"
+            fill-rule="nonzero"
+          />
+        </pattern>
+        <rect
+          x="0"
+          y="0"
+          width="100%"
+          height="100%"
+          fill="url(#pattern-filled-stars)"
+        />
+      </symbol>
+      <symbol id="icon-empty-stars" viewBox="0 0 117 16">
+        <pattern
+          id="pattern-empty-stars"
+          x="0"
+          y="0"
+          width="25"
+          height="16"
+          patternUnits="userSpaceOnUse"
+        >
+          <path
+            d="M16.539 6.097a.297.297 0 00-.24-.202l-5.36-.779L8.542.26a.296.296 0 00-.53 0L5.613 5.117l-5.36.779a.297.297 0 00-.165.505l3.88 3.78-.917 5.34a.297.297 0 00.43.312l4.795-2.52 4.794 2.52a.296.296 0 00.43-.313l-.916-5.338L16.464 6.4c.08-.08.11-.197.075-.304z"
+            fill="var(--color-grey)"
+            fill-rule="nonzero"
+          />
+        </pattern>
+        <rect
+          x="0"
+          y="0"
+          width="100%"
+          height="100%"
+          fill="url(#pattern-empty-stars)"
+        />
+      </symbol>
+    </svg>
+
+    <div class="container page__container">
+      <header class="header page__header">
+        <h1 class="header__title text text__display">
+          10,000+ of our users love our products.
+        </h1>
+        <p class="header__subtitle text text__body-lg">
+          We only provide great products combined with excellent customer
+          service. See what our satisfied customers are saying about our
+          services.
+        </p>
+      </header>
+
+      <main class="page__main">
+        <section class="page__review-list">
+          <h2 class="sr-only">Reviews</h2>
+          <ul class="review-list" id="review-list"></ul>
+        </section>
+        <section class="page__testimonial-list">
+          <h2 class="sr-only">Testimonials</h2>
+          <ul class="testimonial-list" id="testimonial-list"></ul>
+        </section>
+      </main>
+    </div>
+
+    <template id="template-review">
+      <li class="review">
+        <article class="review__container">
+          <div class="rating review__rating" data-js="rating">
+            <div class="rating__section rating__section--active">
+              <svg class="rating__icon"><use href="#icon-filled-stars" /></svg>
+            </div>
+            <div class="rating__section rating__section--inactive">
+              <svg class="rating__icon"><use href="#icon-empty-stars" /></svg>
+            </div>
+          </div>
+          <p class="review__value text text__title">
+            Rated <span data-js="value"></span> Stars in
+            <span class="review__company" data-js="company"></span>
+          </p>
+        </article>
+      </li>
+    </template>
+
+    <template id="template-testimonial">
+      <li class="testimonial">
+        <article class="testimonial__container">
+          <div class="testimonial__row">
+            <img class="testimonial__picture" src="" alt="" data-js="image" />
+            <div>
+              <h3
+                class="testimonial__name text text__title"
+                data-js="name"
+              ></h3>
+              <p
+                class="testimonial__status text text__subtitle"
+                data-js="status"
+              ></p>
+            </div>
+          </div>
+          <p class="testimonial__message text text__body-md">
+            “ <span data-js="message"></span> ”
+          </p>
+        </article>
+      </li>
+    </template>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
