@@ -3,6 +3,12 @@ import "./main.css";
 import reviews from "@data/reviews.json";
 import testimonials from "@data/testimonials.json";
 
+import WebReview from "./components/web-review";
+import WebTestimonial from "./components/web-testimonial";
+
+customElements.define("web-review", WebReview, { extends: "li" });
+customElements.define("web-testimonial", WebTestimonial, { extends: "li" });
+
 const reviewListElement = <HTMLUListElement>(
   document.getElementById("review-list")
 );
@@ -10,53 +16,26 @@ const testimonialListElement = <HTMLUListElement>(
   document.getElementById("testimonial-list")
 );
 
-const reviewTemplate = <HTMLTemplateElement>(
-  document.getElementById("template-review")
+reviewListElement.replaceChildren(
+  ...reviews.map((review) => {
+    const webReview = <WebReview>(
+      document.createElement("li", { is: "web-review" })
+    );
+    webReview.dataCompany = review.company;
+    webReview.dataValue = String(review.value);
+    return webReview;
+  })
 );
-const testimonialTemplate = <HTMLTemplateElement>(
-  document.getElementById("template-testimonial")
+
+testimonialListElement.replaceChildren(
+  ...testimonials.map((testimonial) => {
+    const webTestimonial = <WebTestimonial>(
+      document.createElement("li", { is: "web-testimonial" })
+    );
+    webTestimonial.dataPicture = testimonial.picture;
+    webTestimonial.dataName = testimonial.name;
+    webTestimonial.dataStatus = testimonial.status;
+    webTestimonial.dataMessage = testimonial.message;
+    return webTestimonial;
+  })
 );
-
-const reviewElements = reviews.map((review) => {
-  const reviewElement = <HTMLLIElement>reviewTemplate.content.cloneNode(true);
-  const nameElement = <HTMLSpanElement>(
-    reviewElement.querySelector('[data-js="company"]')
-  );
-  const valueElement = <HTMLSpanElement>(
-    reviewElement.querySelector('[data-js="value"]')
-  );
-  const ratingElement = <HTMLDivElement>(
-    reviewElement.querySelector('[data-js="rating"]')
-  );
-  nameElement.textContent = review.company;
-  valueElement.textContent = String(review.value);
-  ratingElement.classList.add(`rating--${String(review.value)}-of-5`);
-  return reviewElement;
-});
-
-const testimonialElements = testimonials.map((testimonial) => {
-  const testimonialElement = <HTMLLIElement>(
-    testimonialTemplate.content.cloneNode(true)
-  );
-  const imageElement = <HTMLImageElement>(
-    testimonialElement.querySelector('[data-js="image"]')
-  );
-  const nameElement = <HTMLHeadingElement>(
-    testimonialElement.querySelector('[data-js="name"]')
-  );
-  const statusElement = <HTMLParagraphElement>(
-    testimonialElement.querySelector('[data-js="status"]')
-  );
-  const messageElement = <HTMLParagraphElement>(
-    testimonialElement.querySelector('[data-js="message"]')
-  );
-  imageElement.src = testimonial.picture;
-  imageElement.alt = `${testimonial.name} profile picture`;
-  nameElement.textContent = testimonial.name;
-  statusElement.textContent = testimonial.status;
-  messageElement.textContent = testimonial.message;
-  return testimonialElement;
-});
-
-reviewListElement.replaceChildren(...reviewElements);
-testimonialListElement.replaceChildren(...testimonialElements);

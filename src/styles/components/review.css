@@ -1,14 +1,11 @@
-.review {
-  background-color: var(--color-light-grayish-magenta);
-  padding: 16px;
-  border-radius: 8px;
-}
-
 .review__container {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  background-color: var(--color-light-grayish-magenta);
+  padding: 16px;
+  border-radius: 8px;
 }
 
 .review__rating {
@@ -22,7 +19,6 @@
 @media screen and (min-width: 1206px) {
   .review {
     width: 445px;
-    padding: 20px 32px;
   }
 
   .review:nth-child(1) {
@@ -40,6 +36,7 @@
   .review__container {
     flex-direction: row;
     gap: 32px;
+    padding: 20px 32px;
   }
 
   .review__rating {

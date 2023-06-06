@@ -126,45 +126,44 @@
     </div>
 
     <template id="template-review">
-      <li class="review">
-        <article class="review__container">
-          <div class="rating review__rating" data-js="rating">
-            <div class="rating__section rating__section--active">
-              <svg class="rating__icon"><use href="#icon-filled-stars" /></svg>
-            </div>
-            <div class="rating__section rating__section--inactive">
-              <svg class="rating__icon"><use href="#icon-empty-stars" /></svg>
-            </div>
+      <article class="review__container">
+        <div class="rating review__rating" data-js="rating">
+          <div class="rating__section rating__section--active">
+            <svg class="rating__icon"><use href="#icon-filled-stars" /></svg>
           </div>
-          <p class="review__value text text__title">
-            Rated <span data-js="value"></span> Stars in
-            <span class="review__company" data-js="company"></span>
-          </p>
-        </article>
-      </li>
+          <div class="rating__section rating__section--inactive">
+            <svg class="rating__icon"><use href="#icon-empty-stars" /></svg>
+          </div>
+        </div>
+        <p class="review__value text text__title">
+          Rated <span data-js="value"></span> Stars in
+          <span class="review__company" data-js="company"></span>
+        </p>
+      </article>
     </template>
 
     <template id="template-testimonial">
-      <li class="testimonial">
-        <article class="testimonial__container">
-          <div class="testimonial__row">
-            <img class="testimonial__picture" src="" alt="" data-js="image" />
-            <div>
-              <h3
-                class="testimonial__name text text__title"
-                data-js="name"
-              ></h3>
-              <p
-                class="testimonial__status text text__subtitle"
-                data-js="status"
-              ></p>
-            </div>
+      <article class="testimonial__container">
+        <div class="testimonial__row">
+          <img
+            class="testimonial__picture"
+            src=""
+            alt=""
+            draggable="false"
+            data-js="image"
+          />
+          <div>
+            <h3 class="testimonial__name text text__title" data-js="name"></h3>
+            <p
+              class="testimonial__status text text__subtitle"
+              data-js="status"
+            ></p>
           </div>
-          <p class="testimonial__message text text__body-md">
-            “ <span data-js="message"></span> ”
-          </p>
-        </article>
-      </li>
+        </div>
+        <p class="testimonial__message text text__body-md">
+          “ <span data-js="message"></span> ”
+        </p>
+      </article>
     </template>
 
     <script type="module" src="/src/main.ts"></script>
