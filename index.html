@@ -52,7 +52,7 @@
     />
   </head>
   <body class="page">
-    <svg class="sr-only" xmlns="http://www.w3.org/2000/svg">
+    <svg class="sr-only" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
       <symbol id="icon-filled-stars" viewBox="0 0 117 16">
         <pattern
           id="pattern-filled-stars"
@@ -114,12 +114,12 @@
       </header>
 
       <main class="page__main">
-        <section class="page__review-list">
-          <h2 class="sr-only">Reviews</h2>
+        <section class="page__review-list" aria-labelledby="reviews">
+          <h2 class="sr-only" id="reviews">Reviews</h2>
           <ul class="review-list" id="review-list"></ul>
         </section>
-        <section class="page__testimonial-list">
-          <h2 class="sr-only">Testimonials</h2>
+        <section class="page__testimonial-list" aria-labelledby="testimonials">
+          <h2 class="sr-only" id="testimonials">Testimonials</h2>
           <ul class="testimonial-list" id="testimonial-list"></ul>
         </section>
       </main>
